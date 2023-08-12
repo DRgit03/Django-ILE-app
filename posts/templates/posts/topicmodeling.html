@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+
+    <h1>Rennes School of Business</h1>
+    <p class="lead">Welcome to the Topic Modelling please select the required button </p>
+      <a href="{% url 'csvdata' %}" class="btn btn-primary btn-lg">For Uploading a Csv file Click Here</a>
+      <a href="{% url 'textdata' %}" class="btn btn-success btn-lg">For Uploading a Text file Click Here</a>
+      <a href="{% url 'pdfdata' %}" class="btn btn-warning btn-lg">For Uploading a Pdf file Click Here</a>
+  </div>
+
+{% endblock %}

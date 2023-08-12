@@ -1,0 +1,11 @@
+<h3>Upload a file for Sentiment Analysis </h3>
+  <form action="/sentiment_analysis/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <div class="form-group"> 
+      <input type="file" name="document" />
+    </div>
+    <div>
+    <button type="submit">Submit</button>
+    </div>
+      
+  </form>

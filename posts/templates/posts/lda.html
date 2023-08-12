@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>LDA</h1>
+  <form action="/ldadata/" method="POST">
+    {% csrf_token %}
+    {{form}}
+
+    <div class="form-group">
+      <label>TotalTopics</label>
+      <input type="text" name="total_topics" class="form-control" value={{total_topics}}>
+    </div>
+    
+    <div class="form-group">
+      <label>numberwords</label>
+      <input type="text" name="number_words" class="form-control" value={{number_words}}>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <h1>LDA Format Topic Sentences</h1>
+
+  <form action="/format_topics_sentences/" method="POST">
+
+    <div class="form-group">
+      <label>TotalTopics</label>
+      <input type="text" name="total_topics" class="form-control" value={{total_topics}}>
+    </div>
+    
+    <div class="form-group">
+      <label>numberwords</label>
+      <input type="text" name="number_words" class="form-control" value={{number_words}}>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}

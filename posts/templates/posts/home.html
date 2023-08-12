@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+
+  <div class="jumbotron text-center">
+
+
+  	
+
+    <h2>Welcome to Integrated Learning Engine(ILE)</h2>
+    <h3>This Application was build for scraping the data from Twitter, Topic Modeling data and Speech Recognition </h3>
+      <a href="{% url 'twitterdata' %}" class="btn btn-primary btn-lg">Twitter Data Retrieve</a>
+      <a href="{% url 'topicmodeling'%}" class="btn btn-success btn-lg">Topic Modeling</a>
+      <a href="{% url 'speechrecognition'%}" class="btn btn-warning btn-lg">Speech Recognition </a>
+  </div>
+  <div class="jumbotron text-center">
+  	<a href="{% url 'sentiment' %}" class="btn btn-primary btn-lg">Sentiment Analysis</a>
+  </div>
+
+
+{% endblock %}

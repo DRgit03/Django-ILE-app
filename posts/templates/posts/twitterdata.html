@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+
+    
+    <h3>Welcome to  Twitter Scrapping please select the required button </h3>
+      <a href="{% url 'currenttweetsform' %}" class="btn btn-primary btn-lg">Download Current Tweets</a>
+      <a href="{% url 'oldtweets' %}" class="btn btn-success btn-lg">Download Old Tweets</a>
+      <a href="{% url 'getusertimeline' %}" class="btn btn-warning btn-lg">Download Users Timeline or Followers List</a>
+      
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h3>Get user timeline data of particular user</h3>
+  <form action="/usertimeline/" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" name="username" class="form-control" value={{username}}>
+    </div>
+    <div class="form-group">
+      <label>Enter number of tweets to retrieve </label>
+      <input type="text" name="items" class="form-control" value={{items}}>
+
+    </div>
+    <div class="form-group">
+      <label> Enter your email address to notify your file</label>
+      <input type="email" name="recipient_email_address" class="form-control" value={{recipient_email_address}}>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <h3>Get followers list of particular user</h3>
+  <form action="/getfollowerlist/" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <div class="form-group">
+      <label>Enter username </label>
+      <input type="text" name="username" class="form-control" value={{username}}>
+    </div>
+    <div class="form-group">
+      <label>Enter number of followers to retrieve</label>
+      <input type="text" name="items" class="form-control" value={{items}}>
+
+    </div>
+    <div class="form-group">
+      <label> Enter your email address to notify your file</label>
+      <input type="email" name="recipient_email_address" class="form-control" value={{recipient_email_address}}>
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+            
+{% endblock %}

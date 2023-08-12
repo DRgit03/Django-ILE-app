@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h3>Search by particular username for current tweets data</h3>
+  <form action="/currenttweetsform/" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <div class="form-group">
+      <label>Enter Username</label>
+      <input type="text" name="username" class="form-control" value={{username}}>
+    </div>
+    <div class="form-group">
+      <label>Enter maximum number of tweets</label>
+      <input type="text" name="items" class="form-control" value={{items}}>
+    </div>
+    <div class="form-group">
+      <label> Enter your email address to notify your file</label>
+      <input type="email" name="recipient_email_address" class="form-control" value={{recipient_email_address}}>
+    </div>
+    <button type="submit()" class="btn btn-primary">Submit</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  </form>
+
+<h5> upload a csv file with multiple username values and items = number of tweets to retreive</h5>
+<form action ="/current_upload/" method="post">
+    {% csrf_token %}
+   <div>
+      <button type="submit" class="btn btn-info">click here download format of input file</buttton>
+    </div>
+  </form>
+  
+  <h3>Upload a file for getting multiple users tweets by giving list of usernames and number of tweets to be retrived</h3>
+  <form action="/upload_file_currenttweets/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <div class="form-group"> 
+      <input type="file" name="document" />
+      </div>
+    <div class="form-group">
+      <label> Enter your email address to notify your file</label>
+      <input type="email" name="recipient_email_address" class="form-control" value={{recipient_email_address}}>
+    </div>
+      <input type="submit" />
+  </form>
+
+   
+
+  
+  
+
+  <h3>Search by particular hashtag value for current tweets data</h3>
+  <form action="/currenttweetshashtagform/" method="POST" >
+    {% csrf_token %}
+    {{form}}
+    <div class="form-group">
+      <label>Enter hashtag values</label>
+      <input type="text" name="username" class="form-control" value={{username}}>
+    </div>
+    <div class="form-group">
+      <label>Enter maximum number of tweets</label>
+      <input type="text" name="items" class="form-control" value={{items}}>
+    </div>
+    <div class="form-group">
+      <label> Enter your email address to notify your file</label>
+      <input type="email" name="recipient_email_address" class="form-control" value={{recipient_email_address}}>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <h3>Upload a csv file for getting multiple users tweets by giving list of Hashtag values and number of tweets to be retrived</h3>
+  <form action ="/sample_upload/" method="post">
+    {% csrf_token %}
+   <div>
+      <button type="submit" class="btn btn-info">click here download format of input file</buttton>
+    </div>
+  </form>
+  <h5> upload a csv file with multiple hashtag values and items = number of tweets to retreive</h5>
+
+  <form action="/upload_file_currenttweets_hashtags/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <div class="form-group"> 
+      <input type="file" name="document" />
+      </div>
+    <div class="form-group">
+      <label> Enter your email address to notify your file</label>
+      <input type="email" name="recipient_email_address" class="form-control" value={{recipient_email_address}}>
+    </div>
+      <input type="submit" />
+  </form>
+
+
+
+    
+  
+
+
+{% endblock %}

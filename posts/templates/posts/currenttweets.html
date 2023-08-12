@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Current tweetdata</h1>
+  <form action="/currenttweetsform/" method="post">
+    <label for="username">Your name: </label>
+    <input id="username" type="text" name="username" value="{{ username }}">
+    <input id="items" type="text" name="maximumtweets" value="{{ items }}">
+
+    <input type="submit" value="submit">
+</form>
+  
+{% endblock %}

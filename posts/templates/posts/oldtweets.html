@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h3>Old Tweet data</h3>
+  
+  <form action="/oldtweets/" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <div class="form-group">
+      <label>Username or Hashtag value</label>
+      <input type="text" name="username" class="form-control" value={{username}}>
+    </div>
+    <div class="form-group">
+      <label>since</label>
+      <input type="date" name="since" class="form-control" value={{since}}>
+    </div>
+    <div class="form-group">
+      <label>until</label>
+      <input type="date" name="until" class="form-control" value={{until}}>
+    </div>
+    <div class="form-group">
+      <label>maxtweets</label>
+      <input type="text" name="maxtweets" class="form-control" value={{maxtweets}}>
+    </div>
+    <div class="form-group">
+      <label> Enter your email address to notify your file</label>
+      <input type="email" name="recipient_email_address" class="form-control" value={{recipient_email_address}}>
+    </div>
+      
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+
+
+<h3>Upload a csv file for getting multiple users tweets by giving list of Hashtag values or usernames and number of tweets to be retrived</h3>
+  <img src="C:\\Users\\RAMU\\projects\\djangoproject\\posts\\static\\Capture.PNG">
+
+  <form action ="/date_upload_format/" method="post">
+    {% csrf_token %}
+   <div>
+      <button type="submit" class="btn btn-info">click here download format of input file</buttton>
+    </div>
+  </form>
+
+ <h2>Upload a file for getting multiple users tweets by giving list of username and number of tweets to be retrieved</h2>
+  <form action="/upload_file_oldtweets/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <div class="form-group"> 
+      <input type="file" name="document" />
+      </div>
+    <div class="form-group">
+      <label> Enter your email address to notify your file</label>
+      <input type="email" name="recipient_email_address" class="form-control" value={{recipient_email_address}}>
+    </div>
+      <button type="submit" class="btn btn-info">Submit</button>
+      
+  </form>
+  
+{% endblock %}
